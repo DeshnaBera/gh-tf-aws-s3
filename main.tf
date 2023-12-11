@@ -31,8 +31,6 @@ resource "aws_s3_bucket_object" "object" {
   bucket = aws_s3_bucket.test.id
   key    = "index.html"
   source = "index.html"
-  acl = "public-read"
-
 }
 
 resource "aws_s3_bucket_website_configuration" "example" {
