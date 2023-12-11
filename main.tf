@@ -25,7 +25,7 @@ resource "aws_s3_bucket_public_access_block" "example" {
 
 }
 
-resource "aws_s3_bucket_object" "object" {
+resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.test.id
   key    = "index.html"
   source = "index.html"
