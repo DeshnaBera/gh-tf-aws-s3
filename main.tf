@@ -13,7 +13,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "test" {
   bucket = "mygh-tf-test-bucket"
-
+  acl = "private"
   tags = {
     Name        = "My bucket"
   }
@@ -30,6 +30,7 @@ resource "aws_s3_bucket_object" "object" {
   bucket = aws_s3_bucket.test.id
   key    = "index.html"
   source = "index.html"
+  acl = "public-read"
 }
 
 resource "aws_s3_bucket_website_configuration" "example" {
@@ -41,7 +42,7 @@ resource "aws_s3_bucket_website_configuration" "example" {
 
 }
 
-resource "aws_s3_bucket_policy" "public-acces" {
+/* resource "aws_s3_bucket_policy" "public-acces" {
     bucket = aws_s3_bucket.test.id
 
     policy = <<EOF
@@ -59,4 +60,4 @@ resource "aws_s3_bucket_policy" "public-acces" {
         ]
     }
     EOF
-}
+} */
