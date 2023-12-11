@@ -13,15 +13,15 @@ provider "aws" {
 
 resource "aws_s3_bucket" "test" {
   bucket = "mygh-tf-test-bucket"
+  
   tags = {
-    Name        = "My bucket"
+    Name = "My bucket"
   }
 }
 
 resource "aws_s3_bucket_public_access_block" "example" {
   bucket = aws_s3_bucket.test.id
-
-  block_public_acls       = false
+  block_public_acls = false
 
 }
 
@@ -31,7 +31,7 @@ resource "aws_s3_bucket_object" "object" {
   source = "index.html"
 }
 
-resource "aws_s3_bucket_website_configuration" "example" {
+resource "aws_s3_bucket_website_configuration" "static_website" {
   bucket = aws_s3_bucket.test.id
 
   index_document {
