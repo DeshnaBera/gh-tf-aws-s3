@@ -13,7 +13,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "test" {
   bucket = "mygh-tf-test-bucket"
-  acl = "public-read"
 
   tags = {
     Name        = "My bucket"
