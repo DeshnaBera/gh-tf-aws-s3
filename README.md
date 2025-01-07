@@ -15,7 +15,7 @@ Before you begin, ensure you have met the following requirements:
 
 The repository is organized into several key directories:
 
-- **.github/workflows**: Contains the GitHub Actions workflow file (`deploy.yml`) that automates the deployment process.
+- **.github/workflows**: Contains the GitHub Actions workflow file (`apply.yml`) that automates the deployment process.
 - **index.html**: It is the html file for the web-page where we are calculating factorial of a number.
 - **main.tf**: Contains the Terraform configuration for creating the S3 bucket and configuring it for static website hosting.
 
@@ -28,7 +28,7 @@ The repository is organized into several key directories:
 ## Workflow
 
 1. **Terraform Configuration**: The `terraform` directory contains the configuration files to create the S3 bucket and configure it for static website hosting. This includes setting up the bucket policy and enabling website hosting.
-2. **GitHub Actions**: The workflow file (`deploy.yml`) in the `.github/workflows` directory automates the process of deploying the static website to S3. It uses the AWS credentials stored as GitHub Secrets to authenticate and upload the website files.
+2. **GitHub Actions**: The workflow file (`apply.yml`) in the `.github/workflows` directory automates the process of deploying the static website to S3. It uses the AWS credentials stored as GitHub Secrets to authenticate and upload the website files.
 
 ## Summary
 
