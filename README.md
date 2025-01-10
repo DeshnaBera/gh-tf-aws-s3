@@ -27,7 +27,7 @@ The repository is organized into several key directories:
 
 ## Workflow
 
-1. **Terraform Configuration**: The `terraform` directory contains the configuration files to create the S3 bucket and configure it for static website hosting. This includes setting up the bucket policy and enabling website hosting.
+1. **Terraform Configuration**: The `main.tf` contains the configuration files to create the S3 bucket and configure it for static website hosting. This includes setting up the bucket policy and enabling website hosting.
 2. **GitHub Actions**: The workflow file (`apply.yml`) in the `.github/workflows` directory automates the process of deploying the static website to S3. It uses the AWS credentials stored as GitHub Secrets to authenticate and upload the website files.
 
 ## Summary
