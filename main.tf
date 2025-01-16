@@ -60,5 +60,5 @@ resource "aws_s3_bucket_policy" "public_policy" {
 
 
 output "website_url" {
- value = aws_s3_bucket.host.website_endpoint
+ value = aws_s3_object.object.website_endpoint
 }
