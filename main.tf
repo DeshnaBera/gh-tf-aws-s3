@@ -20,19 +20,19 @@ resource "aws_s3_bucket" "host" {
 }
 
 resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.test.id
+  bucket = aws_s3_bucket.host.id
   block_public_acls = false
 
 }
 
 resource "aws_s3_object" "object" {
-  bucket = aws_s3_bucket.test.id
+  bucket = aws_s3_bucket.host.id
   key    = "index.html"
   source = "index.html"
 }
 
 resource "aws_s3_bucket_website_configuration" "static_website" {
-  bucket = aws_s3_bucket.test.id
+  bucket = aws_s3_bucket.host.id
 
   index_document {
     suffix = "index.html"
@@ -41,7 +41,7 @@ resource "aws_s3_bucket_website_configuration" "static_website" {
 }
 
 /* resource "aws_s3_bucket_policy" "public-acces" {
-    bucket = aws_s3_bucket.test.id
+    bucket = aws_s3_bucket.host.id
 
     policy = <<EOF
     {
