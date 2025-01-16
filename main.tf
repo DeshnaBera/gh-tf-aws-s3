@@ -14,7 +14,6 @@ terraform {
 
 resource "aws_s3_bucket" "host" {
   bucket = "gh-tf-bucket"
-  acl    = "public-read"
   tags = {
     Name = "My bucket"
   }
@@ -33,6 +32,7 @@ resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.host.id
   key    = "index.html"
   source = "index.html"
+  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_website_configuration" "static_website" {
