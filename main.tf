@@ -11,8 +11,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "test" {
-  bucket = "mygh-tf-test-bucket"
+resource "aws_s3_bucket" "host" {
+  bucket = "gh-tf-bucket"
   
   tags = {
     Name = "My bucket"
@@ -53,7 +53,7 @@ resource "aws_s3_bucket_website_configuration" "static_website" {
                 "Effect": "Allow",
                 "Principal": "*",
                 "Action": "s3:GetObject",
-                "Resource": "arn:aws:s3:::mygh-tf-test-bucket/*"
+                "Resource": "arn:aws:s3:::gh-tf-bucket/*"
             }
         ]
     }
