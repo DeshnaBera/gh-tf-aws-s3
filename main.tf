@@ -32,6 +32,7 @@ resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.host.id
   key    = "index.html"
   source = "index.html"
+  content_type = "text/html"
 }
 
 resource "aws_s3_bucket_website_configuration" "static_website" {
@@ -60,5 +61,5 @@ resource "aws_s3_bucket_policy" "public_policy" {
 
 
 output "website_url" {
- value = aws_s3_object.object.website_redirect
+ value = aws_s3_bucket.host.website_redirect
 }
